@@ -7,7 +7,7 @@ const { Header, Content, Footer } = Layout;
 
 class UserComp extends Component {
   render() {
-    const { films, remove, edit, showModal, handleCancel, handleSubmit, initialData, datas,
+    const { films, remove, showModal, handleCancel, handleSubmit, initialData, datas,
       handleChangeStatus, handleChangeTitle, handleChangeStory, handleChangeDuration, handleChangeCategory, handleChangeProduction, handleChangeProducer, handleChangeBanner } = this.props;
     const { TextArea } = Input;
 
@@ -53,42 +53,42 @@ class UserComp extends Component {
                     onFinish={() => handleSubmit(datas.id)}
                   >
                     <Form.Item
-                      name="title"
+                      
                       rules={[{ required: true, message: 'Silahkan masukkan Judul Film!' }]}
-                    ><Input placeholder="Judul Film" defaultValue={datas.title} values={"'"+datas.title+"'"} onChange={handleChangeTitle} />
+                    ><Input placeholder="Judul Film" name="title" defaultValue={datas.title} onChange={handleChangeTitle} />
                     </Form.Item>
                     <Form.Item
-                      name="story"
-                    ><TextArea rows={4} placeholder="Sinopsis" defaultValue={datas.story} onChange={handleChangeStory} />
+                      
+                    ><TextArea rows={4} placeholder="Sinopsis" name="story" defaultValue={datas.story} onChange={handleChangeStory} />
                     </Form.Item>
                     <Form.Item
-                      name="banner"
+                      
                       rules={[{ required: true, message: 'Silahkan masukkan Cover Film!' }]}
-                    ><Input placeholder="URL Cover Banner [Ex. www.domain.com/image.png/.jpg]" defaultValue={datas.banner} value={datas.banner} onChange={handleChangeBanner} />
+                    ><Input placeholder="URL Cover Banner [Ex. www.domain.com/image.png/.jpg]" name="banner" defaultValue={datas.banner} value={datas.banner} onChange={handleChangeBanner} />
                     </Form.Item>
                     <Form.Item
-                      name="duration"
-                    ><Input placeholder="Durasi (menit)" type='number' defaultValue={datas.duration} value={datas.duration} onChange={handleChangeDuration} />
+                      
+                    ><Input placeholder="Durasi (menit)" type='number' name="duration" defaultValue={datas.duration} value={datas.duration} onChange={handleChangeDuration} />
                     </Form.Item>
                     <Form.Item
-                      name="category"
+                      
                       rules={[{ required: true, message: 'Silahkan masukkan Kategori Film! (min. 1)' }]}>
-                      <Input placeholder="Kategori [Pisahkan dengan , (koma)]" defaultValue={datas.category} value={datas.category} onChange={handleChangeCategory} />
+                      <Input placeholder="Kategori [Pisahkan dengan , (koma)]" name="category" defaultValue={datas.category} value={datas.category} onChange={handleChangeCategory} />
                     </Form.Item>
                     <Form.Item
-                      name="producer"
+                      
                       rules={[{ required: true, message: 'Silahkan masukkan Produser Film!' }]}
-                    ><Input placeholder="Produser " defaultValue={datas.producer} value={datas.producer} onChange={handleChangeProducer} />
+                    ><Input placeholder="Produser " name="producer" defaultValue={datas.producer} value={datas.producer} onChange={handleChangeProducer} />
                     </Form.Item>
                     <Form.Item
-                      name="production"
+                      
                       rules={[{ required: true, message: 'Silahkan masukkan Studio Produksi Film!' }]}>
-                      <Input placeholder="Studio Produksi [Pisahkan dengan , (koma)]" defaultValue={datas.production} value={datas.production} onChange={handleChangeProduction} />
+                      <Input placeholder="Studio Produksi [Pisahkan dengan , (koma)]" name="production" defaultValue={datas.production} value={datas.production} onChange={handleChangeProduction} />
                     </Form.Item>
                     <Form.Item
-                      name="status"
+                      
                       rules={[{ required: true, message: 'Silahkan masukkan Status Film!' }]}>
-                      <Input placeholder="Status [Coming Soon/Released]" defaultValue={datas.status} value={datas.status} onChange={handleChangeStatus} />
+                      <Input placeholder="Status [Coming Soon/Released]" name="status" defaultValue={datas.status} value={datas.status} onChange={handleChangeStatus} />
                     </Form.Item >
                     <Form.Item>
                       <Button type="primary" htmlType="submit" className="btn" >
