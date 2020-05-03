@@ -64,7 +64,7 @@ class EditPostComp extends Component {
 
     const film = this.state
 
-    axios.post(`http://localhost:8000/film`, film )
+    axios.post(`https://apiflm.000webhostapp.com/film`, film )
       .then(openNotif => {
         notification['success']({
           message: 'Success',

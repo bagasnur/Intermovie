@@ -23,7 +23,7 @@ class User extends Component {
   };
 
   componentDidMount() {
-    axios.get(`http://localhost:8000/film/list`)
+    axios.get(`https://apiflm.000webhostapp.com/film/list`)
       .then(res => {
         const films = res.data.result;
         this.setState({ films });
@@ -31,7 +31,7 @@ class User extends Component {
   }
 
   onDelete(data) {
-    axios.delete(`http://localhost:8000/film/${data.id}`)
+    axios.delete(`https://apiflm.000webhostapp.com/film/${data.id}`)
       .then(openNotif => {
         notification['info']({
           message: 'Data Deleted',
@@ -133,7 +133,7 @@ class User extends Component {
       },
     });
 
-    axios.put(`http://localhost:8000/film/${id}`, this.state.dataFilm )
+    axios.put(`https://apiflm.000webhostapp.com/film/${id}`, this.state.dataFilm )
       .then(openNotif => {
         notification['success']({
           message: 'Updated',

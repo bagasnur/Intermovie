@@ -9,7 +9,7 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8000/film/top/6`)
+    axios.get(`https://apiflm.000webhostapp.com/film/top/6`)
     .then(res => {
       const films = res.data.result;
       this.setState({ films });
