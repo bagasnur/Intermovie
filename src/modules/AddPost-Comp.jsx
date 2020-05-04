@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import '../assets/css/AddPost.css';
-import { Input, Form, Card, Col, Row, Layout, BackTop, Button, notification } from 'antd';
+import { Input, Form, Card, Col, Layout, BackTop, Button, notification } from 'antd';
 import { Link } from 'react-router-dom';
 const { Content } = Layout;
 

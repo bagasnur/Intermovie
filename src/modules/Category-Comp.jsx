@@ -1,9 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import '../assets/css/Home.css';
-import { Carousel, Typography, Card, Col, Row, Layout, Button } from 'antd';
-const { Header, Content, Footer } = Layout;
-const { Title } = Typography;
-const { Meta } = Card;
+import { Col, Row, Layout, Button } from 'antd';
+const { Content, Footer } = Layout;
 
 class CategoryComp extends Component {
   render() {

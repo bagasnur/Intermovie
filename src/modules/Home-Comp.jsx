@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import '../assets/css/Home.css';
-import { Carousel, Typography, Card, Col, Row, Layout, BackTop, Button } from 'antd';
+import { Carousel, Col, Row, Layout, BackTop, Button } from 'antd';
 import { StarFilled } from '@ant-design/icons';
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 const catData = [
   {
     id: "",

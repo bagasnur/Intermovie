@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../assets/css/Search.css';
-import { Carousel, Typography, Card, Col, Row, Layout, BackTop, Button, Input } from 'antd';
+import { Col, Row } from 'antd';
 import { StarFilled } from '@ant-design/icons';
 
 class SearchComp extends Component {

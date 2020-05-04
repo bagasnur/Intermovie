@@ -1,14 +1,14 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/css/User.css';
-import { Select, Input, Form, Card, Col, Row, Layout, BackTop, Button, Modal } from 'antd';
+import { Input, Form, Card, Col, Row, Layout, BackTop, Button, Modal } from 'antd';
 import { StarFilled } from '@ant-design/icons';
-const { Header, Content, Footer } = Layout;
+const { Content, Footer } = Layout;
 
 class UserComp extends Component {
   render() {
     const { films, remove, showModal, handleCancel, handleSubmit, initialData, datas,
-      handleChangeStatus, handleChangeTitle, handleChangeStory, handleChangeDuration, handleChangeCategory, handleChangeProduction, handleChangeProducer, handleChangeBanner } = this.props;
+      handleChangeStatus, handleChangeTitle, handleChangeStory, handleChangeDuration, handleChangeCategory, handleChangeProduction, handleChangeProducer, handleChangeBanner,id, status, title, story, duration, category, production, producer, banner} = this.props;
     const { TextArea } = Input;
 
     return (
@@ -52,43 +52,29 @@ class UserComp extends Component {
                     initialValues={{ remember: true }}
                     onFinish={() => handleSubmit(datas.id)}
                   >
-                    <Form.Item
-                      
-                      rules={[{ required: true, message: 'Silahkan masukkan Judul Film!' }]}
-                    ><Input placeholder="Judul Film" name="title" defaultValue={datas.title} onChange={handleChangeTitle} />
+                    <Form.Item name="title" 
+                    ><Input placeholder={datas.title} onChange={handleChangeTitle} />
                     </Form.Item>
-                    <Form.Item
-                      
-                    ><TextArea rows={4} placeholder="Sinopsis" name="story" defaultValue={datas.story} onChange={handleChangeStory} />
+                    <Form.Item name="story"
+                    ><TextArea rows={4} placeholder={story} onChange={handleChangeStory} />
                     </Form.Item>
-                    <Form.Item
-                      
-                      rules={[{ required: true, message: 'Silahkan masukkan Cover Film!' }]}
-                    ><Input placeholder="URL Cover Banner [Ex. www.domain.com/image.png/.jpg]" name="banner" defaultValue={datas.banner} value={datas.banner} onChange={handleChangeBanner} />
+                    <Form.Item name="banner"
+                    ><Input placeholder={banner} onChange={handleChangeBanner} />
                     </Form.Item>
-                    <Form.Item
-                      
-                    ><Input placeholder="Durasi (menit)" type='number' name="duration" defaultValue={datas.duration} value={datas.duration} onChange={handleChangeDuration} />
+                    <Form.Item name="duration"
+                    ><Input placeholder={duration} type='number' onChange={handleChangeDuration} />
                     </Form.Item>
-                    <Form.Item
-                      
-                      rules={[{ required: true, message: 'Silahkan masukkan Kategori Film! (min. 1)' }]}>
-                      <Input placeholder="Kategori [Pisahkan dengan , (koma)]" name="category" defaultValue={datas.category} value={datas.category} onChange={handleChangeCategory} />
+                    <Form.Item name="category">
+                      <Input placeholder={category} onChange={handleChangeCategory} />
                     </Form.Item>
-                    <Form.Item
-                      
-                      rules={[{ required: true, message: 'Silahkan masukkan Produser Film!' }]}
-                    ><Input placeholder="Produser " name="producer" defaultValue={datas.producer} value={datas.producer} onChange={handleChangeProducer} />
+                    <Form.Item name="producer"
+                    ><Input placeholder={producer} onChange={handleChangeProducer} />
                     </Form.Item>
-                    <Form.Item
-                      
-                      rules={[{ required: true, message: 'Silahkan masukkan Studio Produksi Film!' }]}>
-                      <Input placeholder="Studio Produksi [Pisahkan dengan , (koma)]" name="production" defaultValue={datas.production} value={datas.production} onChange={handleChangeProduction} />
+                    <Form.Item name="production">
+                      <Input placeholder={production} onChange={handleChangeProduction} />
                     </Form.Item>
-                    <Form.Item
-                      
-                      rules={[{ required: true, message: 'Silahkan masukkan Status Film!' }]}>
-                      <Input placeholder="Status [Coming Soon/Released]" name="status" defaultValue={datas.status} value={datas.status} onChange={handleChangeStatus} />
+                    <Form.Item name="status">
+                      <Input placeholder={status} onChange={handleChangeStatus} />
                     </Form.Item >
                     <Form.Item>
                       <Button type="primary" htmlType="submit" className="btn" >

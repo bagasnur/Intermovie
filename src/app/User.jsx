@@ -23,7 +23,7 @@ class User extends Component {
   };
 
   componentDidMount() {
-    axios.get(`https://apiflm.000webhostapp.com/film/list`)
+    axios.get(`http://localhost:8000/film/list`)
       .then(res => {
         const films = res.data.result;
         this.setState({ films });
@@ -31,7 +31,7 @@ class User extends Component {
   }
 
   onDelete(data) {
-    axios.delete(`https://apiflm.000webhostapp.com/film/${data.id}`)
+    axios.delete(`http://localhost:8000/film/${data.id}`)
       .then(openNotif => {
         notification['info']({
           message: 'Data Deleted',
@@ -48,12 +48,7 @@ class User extends Component {
       })
   }
 
-  edit(data) {
-
-  }
-
   showModal = (e) => {
-    console.log(this.state.dataFilm);
     this.setState({
       datas: e,
       datasId: e.id,
@@ -66,7 +61,7 @@ class User extends Component {
       production: e.production,
       producer: e.producer,
       banner: e.banner,
-      visible: true,
+      visible: true
     });
   };
 
@@ -133,7 +128,7 @@ class User extends Component {
       },
     });
 
-    axios.put(`https://apiflm.000webhostapp.com/film/${id}`, this.state.dataFilm )
+    axios.put(`http://localhost:8000/film/${id}`, this.state.dataFilm )
       .then(openNotif => {
         notification['success']({
           message: 'Updated',
@@ -171,6 +166,15 @@ class User extends Component {
         handleSubmit={this.handleSubmit}
         films={this.state.films}
         remove={this.onDelete}
+        id={this.state.id}
+        status={this.state.status}
+        title={this.state.title}
+        story={this.state.story}
+        duration={this.state.duration}
+        category={this.state.category}
+        production={this.state.production}
+        producer={this.state.producer}
+        banner={this.state.banner}
       />
     )
   }

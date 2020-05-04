@@ -1,7 +1,8 @@
 {
-  "name": "web2react",
+  "name": "intermovielist",
   "version": "0.1.0",
   "private": false,
+  "homepage": "https://intermovielist.herokuapp.com/",
   "dependencies": {
     "@ant-design/icons": "^4.1.0",
     "@testing-library/jest-dom": "^4.2.4",
