@@ -70,11 +70,9 @@ class AddPostComp extends Component {
           description:
             'Data Film: "' + film.title + '" telah disimpan.',
           style: {
-            width: 300,
             border: '2px solid #39df39',
             color: 'white',
-            background: '#52e263',
-            marginLeft: 250 - 175
+            background: '#52e263'
           },
         });
       })

@@ -38,11 +38,9 @@ class User extends Component {
           description:
             'Data Film: "' + data.title + '" dihapus.',
           style: {
-            width: 300,
             border: '2px solid #df3939',
             color: 'white',
-            background: '#df6565',
-            marginLeft: 250 - 175
+            background: '#df6565'
           },
         });
       })
@@ -135,11 +133,9 @@ class User extends Component {
           description:
             'Data Film: "' + this.state.title + '" telah terupdate.',
           style: {
-            width: 300,
             border: '2px solid #39df39',
             color: 'white',
-            background: '#52e263',
-            marginLeft: 250 - 175
+            background: '#52e263'
           },
         });
       })
