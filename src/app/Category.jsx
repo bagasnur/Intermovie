@@ -8,7 +8,7 @@ class Category extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:8000/category/list`)
+    axios.get(`https://apiflm.000webhostapp.com/category/list`)
     .then(res => {
       const categories = res.data.result;
       this.setState({ categories });
