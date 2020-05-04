@@ -8,10 +8,6 @@ class AddPostComp2 extends Component {
     const { handleChange, handleSubmit } = this.props;
     const { TextArea } = Input;
 
-    const onFinish = values => {
-      console.log('Success:', values);
-    };
-
     const onFinishFailed = errorInfo => {
       console.log('Failed:', errorInfo);
     };
@@ -25,7 +21,6 @@ class AddPostComp2 extends Component {
                 <Col span={16} className="inputan">
                 <Form className="inputForm"
                   initialValues={{ remember: true }}
-                  onFinish={onFinish}
                   onFinishFailed={onFinishFailed}
                 >
                   <Form.Item

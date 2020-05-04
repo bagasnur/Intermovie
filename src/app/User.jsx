@@ -166,15 +166,6 @@ class User extends Component {
         handleSubmit={this.handleSubmit}
         films={this.state.films}
         remove={this.onDelete}
-        id={this.state.id}
-        status={this.state.status}
-        title={this.state.title}
-        story={this.state.story}
-        duration={this.state.duration}
-        category={this.state.category}
-        production={this.state.production}
-        producer={this.state.producer}
-        banner={this.state.banner}
       />
     )
   }

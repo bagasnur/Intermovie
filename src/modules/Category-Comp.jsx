@@ -14,8 +14,8 @@ class CategoryComp extends Component {
               <p className="titlee" ><b>Category</b></p>
               <Row className="item">
                 {categories.map(data =>
-                  <Col xs={21} sm={10} md={9} lg={5} xl={3} className="btnMod">
-                    <Button key={data.id}>
+                  <Col xs={21} sm={10} md={9} lg={5} xl={3} key={data.id} className="btnMod">
+                    <Button>
                       {data.name}
                     </Button>
                   </Col>

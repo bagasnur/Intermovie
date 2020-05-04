@@ -5,27 +5,27 @@ import { StarFilled } from '@ant-design/icons';
 const { Content, Footer } = Layout;
 const catData = [
   {
-    id: "",
+    id: "6",
     category: "Action"
   },
   {
-    id: "",
+    id: "7",
     category: "Adventure"
   },
   {
-    id: "",
+    id: "10",
     category: "Comedy"
   },
   {
-    id: "",
+    id: "1",
     category: "Drama"
   },
   {
-    id: "",
+    id: "12",
     category: "Horror"
   },
   {
-    id: "",
+    id: "8",
     category: "Romance"
   }
 ]
@@ -69,10 +69,10 @@ class HomeComp extends Component {
             <Content className="content2">
               <p className="titlee" ><b>Top Category</b></p>
               <Row className="item">
-                {catData.map(data =>
-                <Col xs={21} sm={10} md={9} lg={5} xl={3} className="btnMod">
-                  <Button key={data.id}>
-                    {data.category}
+                {catData.map(cat =>
+                <Col xs={21} sm={10} md={9} lg={5} xl={3} className="btnMod" key={cat.id}>
+                  <Button>
+                    {cat.category}
                   </Button>
                 </Col>
                 )}

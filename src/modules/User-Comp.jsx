@@ -8,7 +8,7 @@ const { Content, Footer } = Layout;
 class UserComp extends Component {
   render() {
     const { films, remove, showModal, handleCancel, handleSubmit, initialData, datas,
-      handleChangeStatus, handleChangeTitle, handleChangeStory, handleChangeDuration, handleChangeCategory, handleChangeProduction, handleChangeProducer, handleChangeBanner,id, status, title, story, duration, category, production, producer, banner} = this.props;
+      handleChangeStatus, handleChangeTitle, handleChangeStory, handleChangeDuration, handleChangeCategory, handleChangeProduction, handleChangeProducer, handleChangeBanner} = this.props;
     const { TextArea } = Input;
 
     return (
@@ -56,25 +56,25 @@ class UserComp extends Component {
                     ><Input placeholder={datas.title} onChange={handleChangeTitle} />
                     </Form.Item>
                     <Form.Item name="story"
-                    ><TextArea rows={4} placeholder={story} onChange={handleChangeStory} />
+                    ><TextArea rows={4} placeholder={datas.story} onChange={handleChangeStory} />
                     </Form.Item>
                     <Form.Item name="banner"
-                    ><Input placeholder={banner} onChange={handleChangeBanner} />
+                    ><Input placeholder={datas.banner} onChange={handleChangeBanner} />
                     </Form.Item>
                     <Form.Item name="duration"
-                    ><Input placeholder={duration} type='number' onChange={handleChangeDuration} />
+                    ><Input placeholder={datas.duration} type='number' onChange={handleChangeDuration} />
                     </Form.Item>
                     <Form.Item name="category">
-                      <Input placeholder={category} onChange={handleChangeCategory} />
+                      <Input placeholder={datas.category} onChange={handleChangeCategory} />
                     </Form.Item>
                     <Form.Item name="producer"
-                    ><Input placeholder={producer} onChange={handleChangeProducer} />
+                    ><Input placeholder={datas.producer} onChange={handleChangeProducer} />
                     </Form.Item>
                     <Form.Item name="production">
-                      <Input placeholder={production} onChange={handleChangeProduction} />
+                      <Input placeholder={datas.production} onChange={handleChangeProduction} />
                     </Form.Item>
                     <Form.Item name="status">
-                      <Input placeholder={status} onChange={handleChangeStatus} />
+                      <Input placeholder={datas.status} onChange={handleChangeStatus} />
                     </Form.Item >
                     <Form.Item>
                       <Button type="primary" htmlType="submit" className="btn" >

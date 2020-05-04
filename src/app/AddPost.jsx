@@ -17,7 +17,7 @@ class AddPost extends Component {
   };
 
   componentDidMount() {
-    axios.get(`https://apiflm.000webhostapp.com/film/`)
+    axios.get(`http://localhost:8000/film/`)
       .then(res => {
         const films = res.data.result;
         this.setState({ films });

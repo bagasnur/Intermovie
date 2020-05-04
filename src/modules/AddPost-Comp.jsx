@@ -60,11 +60,10 @@ class AddPostComp extends Component {
 
 
   handleSubmit = (e) => {
-    console.log(this.state);
 
     const film = this.state
 
-    axios.post(`https://apiflm.000webhostapp.com/film`, film )
+    axios.post(`http://localhost:8000/film`, film )
       .then(openNotif => {
         notification['success']({
           message: 'Success',

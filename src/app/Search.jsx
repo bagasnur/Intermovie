@@ -12,7 +12,7 @@ class Search extends Component {
   }
 
   getInfo = () => {
-    axios.get(`https://apiflm.000webhostapp.com/film?search=${this.state.query}`)
+    axios.get(`http://localhost:8000/film?search=${this.state.query}`)
       .then(res => {
         const films = res.data.result;
         const data = res.data.data_found;
