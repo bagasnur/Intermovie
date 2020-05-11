@@ -63,7 +63,7 @@ class AddPostComp extends Component {
 
     const film = this.state
 
-    axios.post(`https://apiflm.000webhostapp.com/film`, film )
+    axios.post(`https://intermovieapi.herokuapp.com/film`, film )
       .then(openNotif => {
         notification['success']({
           message: 'Success',
