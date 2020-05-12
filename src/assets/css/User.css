@@ -46,6 +46,18 @@
   padding: 0;
 }
 
+.banner-detail{
+  height: 500px;
+}
+
+.detail{
+  margin: 40px auto 60px;
+}
+
+.detail h1{
+  font-size: 2em !important;
+}
+
 .inputan{
   margin: 15px auto;
 }

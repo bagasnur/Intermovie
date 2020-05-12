@@ -18,42 +18,42 @@ class AddPostComp extends Component {
   }
 
   handleChangeStatus = event => {
-    this.setState({ 
+    this.setState({
       status: event.target.value
     });
   }
   handleChangeTitle = event => {
-    this.setState({ 
+    this.setState({
       title: event.target.value
     });
   }
   handleChangeStory = event => {
-    this.setState({ 
+    this.setState({
       story: event.target.value
     });
   }
   handleChangeDuration = event => {
-    this.setState({ 
+    this.setState({
       duration: event.target.value
     });
   }
   handleChangeCategory = event => {
-    this.setState({ 
+    this.setState({
       category: event.target.value
     });
   }
   handleChangeProduction = event => {
-    this.setState({ 
+    this.setState({
       production: event.target.value
     });
   }
   handleChangeProducer = event => {
-    this.setState({ 
+    this.setState({
       producer: event.target.value
     });
   }
   handleChangeBanner = event => {
-    this.setState({ 
+    this.setState({
       banner: event.target.value
     });
   }
@@ -63,7 +63,7 @@ class AddPostComp extends Component {
 
     const film = this.state
 
-    axios.post(`https://intermovieapi.herokuapp.com/film`, film )
+    axios.post(`https://intermovieapi.herokuapp.com/film`, film)
       .then(openNotif => {
         notification['success']({
           message: 'Success',
@@ -88,62 +88,63 @@ class AddPostComp extends Component {
       <div>
         <Layout className="layout">
           <div className="lp">
-          <Link to="/user">
-          <Button className="btnMod" >
-              Kembali ke User
-          </Button></Link>
             <Content className="content2">
               <Card title="Add Data Film/Movie">
                 <Col span={16} className="inputan">
-                <Form className="inputForm"
-                  initialValues={{ remember: true }}
-                  onFinish={this.handleSubmit}
-                  onFinishFailed={this.onFinishFailed}
-                >
-                  <Form.Item
-                    name="title" 
-                    rules={[{ required: true, message: 'Silahkan masukkan Judul Film!' }]}
-                  ><Input placeholder="Judul Film" onChange={this.handleChangeTitle}/>
-                  </Form.Item>
-                  <Form.Item
-                    name="story"
-                  ><TextArea rows={4} placeholder="Sinopsis" onChange={this.handleChangeStory}/>
-                  </Form.Item>
-                  <Form.Item
-                    name="banner"
-                    rules={[{ required: true, message: 'Silahkan masukkan Cover Film!' }]}
-                  ><Input placeholder="URL Cover Banner [Ex. www.domain.com/image.png/.jpg]" onChange={this.handleChangeBanner}/>
-                  </Form.Item>
-                  <Form.Item
-                    name="duration"
-                  ><Input placeholder="Durasi (menit)" type='number' onChange={this.handleChangeDuration}/>
-                  </Form.Item>
-                  <Form.Item
-                    name="category"
-                    rules={[{ required: true, message: 'Silahkan masukkan Kategori Film! (min. 1)' }]}>
-                <Input placeholder="Kategori [Pisahkan dengan , (koma)]" onChange={this.handleChangeCategory}/>
-                  </Form.Item>
-                  <Form.Item
-                    name="producer"
-                    rules={[{ required: true, message: 'Silahkan masukkan Produser Film!' }]}
-                  ><Input placeholder="Produser " onChange={this.handleChangeProducer}/>
-                  </Form.Item>
-                  <Form.Item
-                    name="production"
-                    rules={[{ required: true, message: 'Silahkan masukkan Studio Produksi Film!' }]}>
-                  <Input placeholder="Studio Produksi [Pisahkan dengan , (koma)]" onChange={this.handleChangeProduction}/>
-                  </Form.Item>
-                  <Form.Item
-                    name="status"
-                    rules={[{ required: true, message: 'Silahkan masukkan Status Film!' }]}>
-                   <Input placeholder="Status [Coming Soon/Released]" onChange={this.handleChangeStatus}/>
-                  </Form.Item >
-                  <Form.Item>
-                    <Button type="primary" htmlType="submit" className="btn" >
-                      Simpan Data
+                  <Form className="inputForm"
+                    initialValues={{ remember: true }}
+                    onFinish={this.handleSubmit}
+                    onFinishFailed={this.onFinishFailed}
+                  >
+                    <Form.Item
+                      name="title"
+                      rules={[{ required: true, message: 'Silahkan masukkan Judul Film!' }]}
+                    ><Input placeholder="Judul Film" onChange={this.handleChangeTitle} />
+                    </Form.Item>
+                    <Form.Item
+                      name="story"
+                    ><TextArea rows={4} placeholder="Alur Cerita" onChange={this.handleChangeStory} />
+                    </Form.Item>
+                    <Form.Item
+                      name="banner"
+                      rules={[{ required: true, message: 'Silahkan masukkan Cover Film!' }]}
+                    ><Input placeholder="URL Cover Banner [Ex. www.domain.com/image.png/.jpg]" onChange={this.handleChangeBanner} />
+                    </Form.Item>
+                    <Form.Item
+                      name="duration"
+                    ><Input placeholder="Durasi [menit]" type='number' onChange={this.handleChangeDuration} />
+                    </Form.Item>
+                    <Form.Item
+                      name="category"
+                      rules={[{ required: true, message: 'Silahkan masukkan Kategori Film! (min. 1)' }]}>
+                      <Input placeholder="Kategori [Pisahkan dengan koma]" onChange={this.handleChangeCategory} />
+                    </Form.Item>
+                    <Form.Item
+                      name="producer"
+                      rules={[{ required: true, message: 'Silahkan masukkan Produser Film!' }]}
+                    ><Input placeholder="Produser " onChange={this.handleChangeProducer} />
+                    </Form.Item>
+                    <Form.Item
+                      name="production"
+                      rules={[{ required: true, message: 'Silahkan masukkan Studio Produksi Film!' }]}>
+                      <Input placeholder="Studio Produksi [Pisahkan dengan koma]" onChange={this.handleChangeProduction} />
+                    </Form.Item>
+                    <Form.Item
+                      name="status"
+                      rules={[{ required: true, message: 'Silahkan masukkan Status Film!' }]}>
+                      <Input placeholder="Status [Coming Soon/Released]" onChange={this.handleChangeStatus} />
+                    </Form.Item >
+                    <Form.Item>
+                      <Link to="/user">
+                        <Button className="btnMod btn" >
+                          Kembali
+                        </Button>
+                      </Link>
+                      <Button type="primary" htmlType="submit" className="btn" >
+                        Simpan Data
                       </Button>
-                  </Form.Item>
-                </Form>
+                    </Form.Item>
+                  </Form>
                 </Col>
               </Card>
             </Content>

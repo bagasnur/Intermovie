@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter, Link } from "react-router-dom";
 import '../assets/css/Home.css';
 import { Carousel, Col, Row, Layout, BackTop, Button } from 'antd';
 import { StarFilled } from '@ant-design/icons';
@@ -31,6 +32,18 @@ const catData = [
 ]
 
 class HomeComp extends Component {
+  showHandleCategory = data => {
+    let categoryFilm = data.data.category;
+    console.log(data.data.category)
+    this.props.history.push(`/category/${categoryFilm}`)
+  };
+
+  showHandleFilm = data => {
+    let filmId = data.data.id;
+    console.log(data.data.category)
+    this.props.history.push(`/film/${filmId}`)
+  };
+
   render() {
     const { films } = this.props;
 
@@ -57,7 +70,7 @@ class HomeComp extends Component {
                   <Col xs={21} sm={10} md={9} lg={6} xl={6} className="con" key={data.id}>
                     <div style={{ background: "url("+data.banner+")" }} className="banner"></div>
                     <Col>
-                      <h3><b>{data.title}</b></h3>
+                      <h3><b><Link onClick={()=>this.showHandleFilm({data})}>{data.title}</Link></b></h3>
                       <p><StarFilled style={{ color: '#ebb92f' }} /> {data.rating} / 10 </p>
                     </Col>
                   </Col>
@@ -69,10 +82,10 @@ class HomeComp extends Component {
             <Content className="content2">
               <p className="titlee" ><b>Top Category</b></p>
               <Row className="item">
-                {catData.map(cat =>
-                <Col xs={21} sm={10} md={9} lg={5} xl={3} className="btnMod" key={cat.id}>
-                  <Button>
-                    {cat.category}
+                {catData.map(data =>
+                <Col xs={21} sm={10} md={9} lg={5} xl={3} className="btnMod" key={data.id}>
+                  <Button onClick={()=>this.showHandleCategory({data})}>
+                    {data.category}
                   </Button>
                 </Col>
                 )}
@@ -88,4 +101,4 @@ class HomeComp extends Component {
   }
 }
 
-export default HomeComp;
+export default withRouter(HomeComp);

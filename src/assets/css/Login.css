@@ -1,0 +1,15 @@
+.login-form {
+   max-width: 300px;
+}
+
+.login-form-button {
+   width: 100%;
+}
+
+.ant-input {
+   margin-left: -20px;
+}
+
+.login {
+   padding: 0 50px !important;
+}

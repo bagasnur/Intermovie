@@ -8,7 +8,7 @@ const { Content, Footer } = Layout;
 class UserComp extends Component {
   render() {
     const { films, remove, showModal, handleCancel, handleSubmit, initialData, datas,
-      handleChangeStatus, handleChangeTitle, handleChangeStory, handleChangeDuration, handleChangeCategory, handleChangeProduction, handleChangeProducer, handleChangeBanner} = this.props;
+      handleChangeStatus, handleChangeTitle, handleChangeStory, handleChangeDuration, handleChangeCategory, handleChangeProduction, handleChangeProducer, handleChangeBanner, handleChangeRating} = this.props;
     const { TextArea } = Input;
 
     return (
@@ -19,7 +19,7 @@ class UserComp extends Component {
                 <Card title="Edit Data Film/Movie">
                   <Link to="/create"> <Button type="primary" className="btn">Tambah Data</Button> </Link>
                   {films.map(data =>
-                  <Card key={data.id} type="inner" style={{ margin: "16px 0" }} title={data.title} extra={
+                  <Card key={data.id} type="inner" style={{ margin: "16px 0" }} extra={
                     <Col>
                       <Button type="primary" style={{ marginRight: 16 }} className="btn" onClick={() => showModal(data)}>Edit Data</Button>
                       <Button type="primary" danger className="btn" onClick={() => remove(data)}>Delete</Button>
@@ -28,8 +28,11 @@ class UserComp extends Component {
                       <Col xs={23} sm={23} md={8} lg={8} xl={8} style={{ background: "url(" + data.banner + ")" }} className="banner" >
                       </Col>
                       <Col xs={23} sm={23} md={15} lg={15} xl={15}>
+                        <h1> {data.title} </h1>
                         <b>Sinopsis</b>
                         <p> {data.story} </p>
+                        <b>Durasi</b>
+                        <p> {data.duration} menit</p>
                         <b>Studio Produksi</b>
                         <p> {data.production} </p>
                         <b>Produser</b>
