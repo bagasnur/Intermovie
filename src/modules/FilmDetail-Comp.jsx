@@ -13,7 +13,7 @@ class FilmDetailComp extends Component {
             <Col span={24} style={{ background: "url(" + films.banner + ")" }} className="banner banner-detail" >
             </Col>
             <Col span={20} className="detail">
-              <h1> {films.title} </h1>
+              <h1> {films.title} ({films.status})</h1>
               <b>Sinopsis</b>
               <p> {films.story} </p>
               <b>Durasi</b>

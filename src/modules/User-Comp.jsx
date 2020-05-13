@@ -28,7 +28,7 @@ class UserComp extends Component {
                       <Col xs={23} sm={23} md={8} lg={8} xl={8} style={{ background: "url(" + data.banner + ")" }} className="banner" >
                       </Col>
                       <Col xs={23} sm={23} md={15} lg={15} xl={15}>
-                        <h1> {data.title} </h1>
+                        <h1> {data.title} ({data.status})</h1>
                         <b>Sinopsis</b>
                         <p> {data.story} </p>
                         <b>Durasi</b>
