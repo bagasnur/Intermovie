@@ -4,8 +4,6 @@ import '../assets/css/Login.css';
 import 'antd/dist/antd.css';
 const { Content, Footer } = Layout;
 
-const FormItem = Form.Item;
-
 class Login extends Component {
 
    checkUsername = (rule, value, callback) => {

@@ -8,7 +8,7 @@ const { Content, Footer } = Layout;
 class UserComp extends Component {
   render() {
     const { films, remove, showModal, handleCancel, handleSubmit, initialData, datas,
-      handleChangeStatus, handleChangeTitle, handleChangeStory, handleChangeDuration, handleChangeCategory, handleChangeProduction, handleChangeProducer, handleChangeBanner, handleChangeRating} = this.props;
+      handleChangeStatus, handleChangeTitle, handleChangeStory, handleChangeDuration, handleChangeCategory, handleChangeProduction, handleChangeProducer, handleChangeBanner } = this.props;
     const { TextArea } = Input;
 
     return (
